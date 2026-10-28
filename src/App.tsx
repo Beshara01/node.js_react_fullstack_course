@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Roadmap from './components/Roadmap';
+import Course from './components/Course';
 import Setup from './components/Setup';
 import NodeJS from './components/NodeJS';
 import Backend from './components/Backend';
@@ -7,10 +8,11 @@ import ReactLessons from './components/ReactLessons';
 import Regex from './components/Regex';
 import Tools from './components/Tools';
 
-type Section = 'roadmap' | 'setup' | 'nodejs' | 'backend' | 'react' | 'regex' | 'tools';
+type Section = 'roadmap' | 'course' | 'setup' | 'nodejs' | 'backend' | 'react' | 'regex' | 'tools';
 
 const navItems: { id: Section; label: string; icon: string }[] = [
   { id: 'roadmap', label: 'Roadmap', icon: '🗺️' },
+  { id: 'course', label: 'Learn Step-by-Step', icon: '📚' },
   { id: 'setup', label: 'Setup', icon: '🛠️' },
   { id: 'nodejs', label: 'Node.js', icon: '🟢' },
   { id: 'backend', label: 'Backend', icon: '🗄️' },
@@ -26,6 +28,7 @@ function App() {
   const renderSection = () => {
     switch (activeSection) {
       case 'roadmap': return <Roadmap />;
+      case 'course': return <Course />;
       case 'setup': return <Setup />;
       case 'nodejs': return <NodeJS />;
       case 'backend': return <Backend />;
